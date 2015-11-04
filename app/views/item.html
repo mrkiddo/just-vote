@@ -1,0 +1,74 @@
+<div class="container">
+
+  <div class="row row-title">
+
+    <div class="col-md-12 col-lg-12">
+      <h2>Vote It</h2>
+      <h4>Choose and show your opinion</h4>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3">
+      <div class="todo">
+        <div class="todo-search">
+          <strong>Navigator</strong> 
+          <span class="pull-right"><span class="fui-list-large-thumbnails"></span></span>
+        </div>
+        <ul>
+          <li class="todo-done">
+            <div class="todo-content item-navigator">
+              <span class="fui-checkbox-checked"></span>
+              <span> {{vote | total}} Attenders</span> 
+            </div>
+          </li>
+          <li class="todo-done item-navigator">
+            <div class="todo-content">
+              <span class="fui-time"></span>
+              <span> {{vote.date | timeConvert}}</span> 
+            </div>
+          </li>
+          <li class="todo-done item-navigator">
+            <div class="todo-content">
+              <a type="button" ng-href="#/list" class="btn btn-primary"><span class="fui-arrow-left"></span>Back to list</a>
+            </div>
+          </li>
+          </ul>
+        </div>             
+    </div><!-- sidebar -->
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 item-content" ng-hide="showResult">
+
+      <h4 class="vote-item-title">{{vote.title}}</h4>
+
+      <div class="panel-item panel-item-voted">Choose one of the following options.</div>
+
+      <div ng-repeat="(key, value) in vote.options">
+        <input type="radio" value="{{key}}" name="item" ng-click="select(key)"><label class="option-label"> &nbsp;{{value.content}}</label>
+      </div>
+      <br>
+      <button class="btn btn-primary btn-vote" ng-click="submit()" ng-disabled="disableSubmit"><span class="fui-check"></span>&nbsp;&nbsp;Vote</button>
+      <hr>
+
+    </div><!-- choose view -->
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 item-content" ng-show="showResult">
+
+      <h4 class="vote-item-title">{{vote.title}}</h4>
+
+      <div class="panel-item panel-item-voted">You have voted. Thank you! Here is the review.</div>
+
+      <div ng-repeat="(key, value) in vote.options">
+      <strong>{{value.content}}</strong> - {{value.rate}} out of {{totalRate}}
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{value.rate/totalRate*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{value.rate/totalRate*100}}%;">{{value.rate/totalRate*100 | number:1}}%</div>
+      </div>
+    </div>
+      
+
+    </div><!-- result view -->
+
+  </div><!-- row -->
+</div><!-- container -->

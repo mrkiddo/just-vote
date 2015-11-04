@@ -1,0 +1,70 @@
+<div class="container">
+
+  <div class="row row-title">
+
+    <div class="col-md-12 col-lg-12">
+      <h2>Vote List</h2>
+      <h4>Pick an item you interested</h4>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3">
+      <div class="todo">
+        <div class="todo-search">
+          <strong>Filter</strong> 
+          <span class="pull-right"><span class="fui-gear"></span></span>
+        </div>
+        <ul>
+          <li class="todo-done">
+            <div class="todo-content">
+              <span class="item-num-control">Total items: {{votes.length}}</span>
+            </div>
+          </li>
+          <li class="todo-done">
+            <div class="todo-content">
+              <span class="item-num-control">Items per Page: {{itemPerPage}}</span>
+            </div>
+          </li>
+          <li class="todo-done">
+            <div class="todo-content">
+              <span class="item-num-control">Current Page: {{selectPage}}</span>
+            </div>
+          </li>
+          <li>
+            <div class="todo-content">
+              <label class="checkbox" for="hideVoted">
+                <input type="checkbox" ng-model="showLatest" name="showLatest" ng-change="filterLatest(5)">
+                <strong>Show latest polls</strong>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>             
+    </div><!-- sidebar -->
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
+
+      <div class="panel panel-default panel-item" ng-repeat="(key, value) in votes | range:selectPage:itemPerPage">
+        <div class="panel-body">
+          <h5 class="vote-title"><a ng-href="#/item/{{value.$id}}">{{value.title}}</a></h5>
+          <p><small>
+            <span class="fui-checkbox-checked"></span>
+            <span>{{value | total}} Attended | </span>
+            <span class="fui-time"></span>
+            <span>{{value.date | timeConvert}}</span>
+            <span class="fui-star-2 pull-right"></span>
+          </small></p>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button ng-repeat="vote in votes | pageCount:itemPerPage" ng-click="selected($index + 1)" class="btn btn-primary">{{$index + 1}}</button>
+      </div>
+
+    </div><!-- main content -->
+
+  </div><!-- row -->
+</div><!-- container -->

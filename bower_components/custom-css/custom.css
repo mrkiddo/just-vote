@@ -1,0 +1,178 @@
+body {
+    min-height: 800px;
+    background-color: #eee;
+    overflow-x: hidden;
+    width: 100%; 
+}
+
+.navbar-static-top {
+    margin-bottom: 19px;
+}
+
+.navbar-right {
+	padding-right: 25px;
+}
+
+.row-title {
+	margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+.welcome-title {
+	padding-left: 5%;
+}
+
+.well-info {
+	border: 0;
+	background-color: #34495e;
+}
+
+.item-num-control {
+    border: 0;
+    color: #1abc9c;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.item-num-input {
+	width: 50px;
+    border: 0;
+    border-radius: 3px;
+    padding-left: 5px;
+    background-color: #587088;
+}
+
+.vote-img {
+	padding-top: 30px;
+	text-align: center;
+}
+
+.panel-item {
+	padding-left: 15px;
+    padding-right: 10px;
+    border: 0;
+    background-color: #2C3E50;
+    color: #1ABC9C;
+    font-weight: bold;
+}
+
+.panel-item-voted {
+	padding: 10px 10px 10px 20px;
+    margin-bottom: 30px;
+}
+
+.panel-login {
+	margin-top: 40px;
+	padding: 0;
+	padding-bottom: 30px;
+	border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.login-title {
+	margin-bottom: 50px;
+	color: #34495E;
+	background-color: #1ABC9C;
+    padding: 10px 10px 10px 20px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.alert-login {
+	text-align: center;
+    padding: 0px 10px 20px 10px;
+}
+
+.input-group {
+	width: 70%;
+	border-radius: 0;
+}
+
+.input-group-addon {
+	border-radius: inherit;
+}
+
+.form-control {
+	border-radius: inherit;
+	border: 0;
+}
+
+.btn-login {
+	width: 70%;
+    border-radius: 0;
+}
+
+.btn-vote {
+	border-radius: 0;
+	width:30%;
+}
+
+.register-link {
+	text-align: right;
+	padding-top: 15px;
+}
+
+.register-link a {
+	text-decoration: underline;
+}
+
+.vote-title {
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.vote-item-title {
+	margin-top: 0;
+    margin-bottom: 40px;
+    padding: 0px 20px 0px 0px;
+}
+
+.item-navigator {
+	text-align: center;
+}
+
+.item-content {
+	padding-left: 40px;
+}
+
+.option-label {
+	font-weight: bold;
+}
+
+.history-wrapper {
+	margin-bottom: 50px;
+}
+
+.history-item {
+	padding: 10px;
+	margin-bottom: 8px;
+	font-weight: bold;
+	min-height: 125px;
+}
+
+.history-item-content {
+	background-color: #34495E;
+	padding: 10px;
+}
+
+.history-item-content p {
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.history-item-content span {
+	color: #eee;
+	font-size: small;
+}
+
+.history-add-item span {
+	visibility: hidden;
+}
+
+.btn-group {
+	margin-top: 30px;
+	margin-bottom: 60px
+}

@@ -1,0 +1,64 @@
+<div class="container">
+
+  <div class="row row-title">
+
+    <div class="col-md-12 col-lg-12">
+      <h2>Vote History</h2>
+      <h4>Review what you voted for</h4>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3">
+      <div class="todo">
+        <div class="todo-search">
+          <strong>Filter</strong> 
+          <span class="pull-right"><span class="fui-gear"></span></span>
+        </div>
+        <ul>
+          <li class="todo-done">
+            <div class="todo-content">
+              <label class="checkbox" for="showNew">
+                <input type="checkbox" ng-model="showLatest" name="showLatest" ng-change="filterLatest(5)">
+                <strong>Only show latest records</strong>
+              </label>
+            </div>
+          </li>
+          <li class="todo-done item-navigator">
+            <div class="todo-content">
+              <a type="button" ng-href="#/list" class="btn btn-primary"><span class="fui-arrow-left"></span>Back to list</a>
+            </div>
+          </li>
+        </ul>
+      </div>             
+    </div><!-- sidebar -->
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 history-wrapper">
+      
+      <div class="well well-info">
+        <span class="fui-list-bulleted" style="color: #1ABC9C;"></span>
+        <span class="item-num-control">Total items: {{records.length}} </span>
+      </div><!-- list info --> 
+
+      <div class="col-sm-12 col-md-6 col-lg-4 history-item" ng-repeat="record in records">
+        <div class="history-item-content">
+          <p><a ng-href="#/item/{{record.id}}" title="{{record.title}}">{{record.title}}</a></p>
+          <span class="fui-checkbox-checked"></span><span> Your choice: {{record.option}}</span><br>
+          <span class="fui-time"></span><span> {{record.date | timeConvert}}</span>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-4 history-item">
+        <div class="history-item-content history-add-item">
+          <p><a href="#/create" title="Initial a new vote">Initial a new vote</a></p>
+          <span>&nbsp;</span><br>
+          <span>&nbsp;</span>
+        </div>
+      </div>    
+
+    </div><!-- main content -->
+
+  </div><!-- row -->
+</div><!-- container -->

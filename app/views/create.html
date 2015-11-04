@@ -1,0 +1,54 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="hidden-xs hidden-sm col-md-7 col-lg-7">
+
+      <h2>Initiate a Vote</h2>
+      <h4>Just be curious how others think</h4>
+
+      <div class="vote-img">
+        <img src="images/flat-icon/pencil-retina.svg">
+      </div>
+    </div>
+
+    <div class="visible-sm-12 hidden-md hidden-lg welcome-title">
+      <h2>Initiate a Vote</h2>
+      <h4>Just be curious how others think</h4>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+
+      <div class="panel panel-default panel-item panel-login">
+        <h5 class="login-title">Create <span class="pull-right"><span class="fui-plus"></span></span></h5>
+
+        <div class="alert-login" ng-bind="error"></div>
+
+        <div class="form-group" align="center">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="fui-new"></span></span>
+            <input type="text" class="form-control" placeholder="Title for your vote" ng-model="title">
+          </div>
+        </div>
+        <div class="form-group" id="marker" align="center" ng-repeat="item in list">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="fui-radio-checked"></span></span>
+            <input type="text" class="form-control" placeholder="Type an option" ng-model="item.value">
+          </div>
+        </div>
+        <div class="form-group" align="center">
+          <button type="button" class="btn btn-primary btn-lg btn-block btn-login" ng-click="addOption()">Add Option</button>
+        </div>
+        <div class="form-group" align="center">
+          <button type="button" class="btn btn-primary btn-lg btn-block btn-login" ng-click="clear()">Clear</button>
+        </div>          
+        <div class="form-group" align="center">
+          <button type="button" class="btn btn-primary btn-lg btn-block btn-login" ng-click="submit()" ng-disabled="disabledSubmit" ng-bind="submitBtnText"></button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

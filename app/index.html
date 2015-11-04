@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Just-Vote</title>
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/videojs/dist/video-js/video-js.css" />
+    <link rel="stylesheet" href="bower_components/flat-ui/dist/css/flat-ui.css" />
+    <link rel="stylesheet" href="bower_components/custom-css/custom.css" />
+    <link rel="stylesheet" href="bower_components/custom-css/spanner.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="justVoteApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="wrapper" ng-controller="MainCtrl">
+
+      <nav class="navbar navbar-inverse navbar-static-top navbar-lg navbar-embossed" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/list" title="Back to list">Just-Vote</a>
+      </div>   
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+        <p class="navbar-text navbar-right" ng-hide="authData"><strong>Easy to vote or initiate a poll</strong></p>    
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-show="authData"><a href="#/create" title="Initiate a poll"><span class="fui-plus"></span></a></li>
+          <li ng-show="authData"><a href="#/user" title="View your voting history"><span class="fui-user"></span></a></li>
+          <li ng-show="authData"><a href="#" title="Sign out" ng-click="logout($event)"><span class="fui-power"></span></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <route-load-indicator></route-load-indicator>
+
+    <!-- ng-view -->
+    <div ng-if="!isRouteLoding">
+      <ng-view></ng-view>
+    </div>
+
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/videojs/dist/video-js/video.js"></script>
+    <script src="bower_components/flat-ui/dist/js/flat-ui.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/register.js"></script>
+        <script src="scripts/controllers/list.js"></script>
+        <script src="scripts/controllers/item.js"></script>
+        <script src="scripts/controllers/create.js"></script>
+        <script src="scripts/controllers/user.js"></script>
+        <script src="scripts/services/vote.js"></script>
+        <script src="scripts/services/firebaseurl.js"></script>
+        <script src="scripts/services/auth.js"></script>
+        <script src="scripts/services/history.js"></script>
+        <script src="scripts/filters/total.js"></script>
+        <script src="scripts/filters/timeconvert.js"></script>
+        <script src="scripts/filters/range.js"></script>
+        <script src="scripts/filters/pagecount.js"></script>
+        <script src="scripts/directives/routeloadindicator.js"></script>
+        <script src="scripts/directives/successindicator.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

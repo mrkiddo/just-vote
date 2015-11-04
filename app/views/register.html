@@ -1,0 +1,56 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="hidden-xs hidden-sm col-md-7 col-lg-7">
+
+      <h2>Become a voter</h2>
+      <h4>Toward the world of polls and votes</h4>
+
+      <div class="vote-img">
+        <img src="images/flat-icon/loop-retina.svg">
+      </div>
+    </div>
+
+    <div class="visible-sm-12 hidden-md hidden-lg welcome-title">
+      <h2>Become a voter</h2>
+      <h4>Towards the world of polls and votes</h4>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+
+      <div class="panel panel-default panel-item panel-login">
+        <h5 class="login-title">Register <span class="pull-right"><span class="fui-plus-circle"></span></span></h5>
+
+        <div class="alert-login" ng-bind="error" ng-show="error"></div>
+
+      	<div class="form-group" align="center">
+           <div class="input-group">
+             <span class="input-group-addon"><span class="fui-mail"></span></span>
+             <input type="email" class="form-control" placeholder="Your E-Mail" ng-model="email">
+           </div>
+         </div>
+         <div class="form-group" align="center">
+           <div class="input-group">
+             <span class="input-group-addon"><span class="fui-lock"></span></span>
+             <input type="password" class="form-control" placeholder="Choose a Password" ng-model="passwd1">
+           </div>
+         </div>
+         <div class="form-group" align="center">
+           <div class="input-group">
+             <span class="input-group-addon"><span class="fui-lock"></span></span>
+             <input type="password" class="form-control" placeholder="Repeat your Password" ng-model="passwd2">
+           </div>
+         </div>
+         <div class="form-group" align="center">
+           <button type="button" class="btn btn-primary btn-lg btn-block btn-login" 
+           ng-click="create()" ng-disabled="!(email && passwd1 && passwd2)" ng-bind="createBtnText"></button>
+         </div>
+         <p class="register-link" style="text-align: center;">Already a voter?&nbsp;<a ng-href="#/login">Login</a></p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
